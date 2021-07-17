@@ -15,7 +15,6 @@ event.preventDefault();
       //throw error
       return;
     }
-
     props.onAddTodo(enteredText);
   };
   
