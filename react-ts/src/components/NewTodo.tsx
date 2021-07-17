@@ -1,6 +1,7 @@
 import React, {useRef} from "react";
 
-const NewTodo = () => {
+const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => { 
+  //{onAddTodo:(parameters) => define the return- TS way of defining a function
   const todoTextInputRef= useRef<HTMLInputElement>(null);
 
   const submitHandler = (event: React.FormEvent) => { //React form submission event
@@ -13,6 +14,8 @@ event.preventDefault();
       //throw error
       return;
     }
+
+    props.onAddTodo(enteredText);
   };
   
   return (
