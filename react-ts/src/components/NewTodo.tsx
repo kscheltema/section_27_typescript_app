@@ -1,11 +1,12 @@
-import React, {useRef} from "react";
+import React, {useRef, useContext} from "react";
+import { TodoContext } from "../store/todos-context";
 import classes from './NewTodo.module.css'
 
-const NewTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => { 
-  //{onAddTodo:(parameters) => define the return- TS way of defining a function
+const NewTodo: React.FC = () => { 
+  const todosCTX = useContext(TodoContext);
   const todoTextInputRef= useRef<HTMLInputElement>(null);
 
-  const submitHandler = (event: React.FormEvent) => { //React form submission event
+  const submitHandler = (event: React.FormEvent) => {
 event.preventDefault();
     const enteredText = todoTextInputRef.current!.value; 
     //? value not known to be established
@@ -15,7 +16,7 @@ event.preventDefault();
       //throw error
       return;
     }
-    props.onAddTodo(enteredText);
+    todosCTX.addTodo(enteredText);
   };
   
   return (
