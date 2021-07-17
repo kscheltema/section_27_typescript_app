@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
+    "target": "es5", //code will be transformed to be compatible with es5
+    "lib": [ //essential listed libraries 
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": true, //allows JS alongside TS files to be included in the project
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": true, //helps with default warnings
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
