@@ -5,6 +5,14 @@ const NewTodo = () => {
 
   const submitHandler = (event: React.FormEvent) => { //React form submission event
 event.preventDefault();
+    const enteredText = todoTextInputRef.current!.value; 
+    //? value not known to be established
+    //! value known to be established  - aka not a null value
+
+    if(enteredText.trim().length === 0) {
+      //throw error
+      return;
+    }
   };
   
   return (
